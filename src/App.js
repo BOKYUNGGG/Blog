@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import Header from './components/header/Header';
+import SidebarContainer from './components/sidebar/SidebarContainer';
+const Wrapper = styled.div`
+  display : flex;
+  flex-direction : row;
+  width : 100vw;
+  & .left{
+    margin-right : auto;
+  }
+  & .center{
+    width : 768px;
+  }
+  & .right{
+    margin-left : auto;
+  }
+`
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header>header</Header>
+      <Wrapper>
+        <div className='left'>
+          <SidebarContainer/>
+        </div>
+        <div className='center'>center</div>
+        <div className='right'>right</div>
+      </Wrapper>
     </div>
   );
 }
